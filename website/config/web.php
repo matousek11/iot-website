@@ -51,14 +51,15 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'sensor/detail/<id:\d+>' => 'sensor/detail',
             ],
         ],
-        */
+
     ],
     'params' => $params,
     "modules" => [
