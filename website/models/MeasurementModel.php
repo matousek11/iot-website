@@ -14,6 +14,12 @@ class MeasurementModel extends ActiveRecord
         return 'measurement';
     }
 
+    public int $measurementId;
+    public int $sensorId;
+    public $temperature;
+    public $humidity;
+    public int $time;
+
     /**
      * Define the attributes and their validation rules.
      */
