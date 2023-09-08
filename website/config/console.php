@@ -29,7 +29,7 @@ $config = [
     ],
     'params' => $params,
     'controllerMap' => [
-        'sensor' => 'app\commands\AverageTemperatureController',
+        'sensor' => 'app\commands\SensorController',
     ],
 ];
 
