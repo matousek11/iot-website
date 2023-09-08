@@ -14,35 +14,23 @@ class MeasurementModel extends ActiveRecord
         return 'measurement';
     }
 
-    public int $measurementId;
-    public int $sensorId;
-    public $temperature;
-    public $humidity;
-    public int $time;
-
-    /**
-     * Define the attributes and their validation rules.
-     */
     public function rules()
     {
         return [
-            [['measurementId', 'sensorId', 'temperature', "humidity", "time"], 'required'],
+            [['sensorId', 'temperature', 'humidity'], 'required'],
+            [['sensorId'], 'integer'],
+            [['temperature', 'humidity'], 'double'],
             [['time'], 'integer'],
-            [['temperature', "humidity"], 'float'],
         ];
     }
 
-    /**
-     * Attribute labels for better display in forms and views.
-     */
     public function attributeLabels()
     {
         return [
-            'measurementId' => 'Measurement ID',
             'sensorId' => 'Sensor ID',
             'temperature' => 'Temperature',
             'humidity' => 'Humidity',
-            "time" => "Time created",
+            'time' => 'Time Created',
         ];
     }
 }

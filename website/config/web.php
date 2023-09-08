@@ -57,7 +57,9 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'sensor/detail/<id:\d+>' => 'sensor/detail',
-                'api/temperature-average' => 'temperature/temperature-average'
+                'api/temperature-average' => 'temperature/temperature-average',
+                'api/insert-data' => 'insert-data/index',
+                'api/get-token' => 'insert-data/get-token',
             ],
         ],
 
