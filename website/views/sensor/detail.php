@@ -6,12 +6,9 @@ use kartik\grid\GridView;
 $this->title = 'Sensor detail';
 ?>
 <div class="site-index">
-
     <div class="jumbotron text-center bg-transparent mt-5 mb-5">
         <h1 class="display-4">Sensor detail</h1>
-
         <p class="lead">Sensor detail page with last 20 measurements.</p>
-
     </div>
 
     <div class="body-content">
@@ -42,7 +39,6 @@ $this->title = 'Sensor detail';
             echo GridView::widget([
                 'dataProvider' => $measurementsDataProvider,
                 'columns' => [
-                    // Define your grid columns here
                     ['attribute' => 'temperature', 'label' => 'Temperature(°C)'],
                     ['attribute' => 'humidity', 'label' => 'Humidity(%)'],
                     ['attribute' => 'time', 'label' => 'Date', "format" => ["date", 'php:d.m.Y']],

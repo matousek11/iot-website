@@ -9,7 +9,14 @@ use yii\db\Expression;
 
 class SensorController extends Controller
 {
-    public function actionAverage($sensorId)
+    /**
+     * Calculates average temperature from last 24 hours.
+     *
+     * @param int $sensorId Id of sensor.
+     *
+     * @return int Exit code.
+     */
+    public function actionAverage(int $sensorId): int
     {
         $average = $this->calculateAverage($sensorId);
         if ($average === null) {
@@ -20,7 +27,14 @@ class SensorController extends Controller
         return ExitCode::OK;
     }
 
-    private function calculateAverage($sensorId)
+    /**
+     * Calculate average temperature from last 24 hours.
+     *
+     * @param int $sensorId Id of sensor.
+     *
+     * @return float Average temperature from database.
+     */
+    private function calculateAverage(int $sensorId): float
     {
         $twentyFourHoursAgo = new Expression('NOW() - INTERVAL 1 DAY');
         $averageTemperature = Yii::$app->db->createCommand('

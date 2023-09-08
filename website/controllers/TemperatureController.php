@@ -9,7 +9,14 @@ use yii\db\Expression;
 
 class TemperatureController extends Controller
 {
-    public function actionTemperatureAverage($id)
+    /**
+     * Provides average temperature from sensor from last 24 hours.
+     *
+     * @param int $id Id of sensor from which measurements are.
+     *
+     * @return string JSON with average temperature from sensor from last 24 hours.
+     */
+    public function actionTemperatureAverage($id): string
     {
         $twentyFourHoursAgo = new Expression('NOW() - INTERVAL 1 DAY');
         $averageTemperature = Yii::$app->db->createCommand('

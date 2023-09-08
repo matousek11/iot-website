@@ -60,6 +60,7 @@ $config = [
                 'api/temperature-average' => 'temperature/temperature-average',
                 'api/insert-data' => 'insert-data/index',
                 'api/get-token' => 'insert-data/get-token',
+                'sensor/insert-data' => 'measurement/insert-data',
             ],
         ],
 

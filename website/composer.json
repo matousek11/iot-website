@@ -7,6 +7,11 @@
     "basic",
     "project template"
   ],
+  "autoload": {
+    "psr-4": {
+      "app\\helpers\\": "helpers/"
+    }
+  },
   "homepage": "https://www.yiiframework.com/",
   "type": "project",
   "license": "BSD-3-Clause",

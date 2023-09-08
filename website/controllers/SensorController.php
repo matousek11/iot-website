@@ -2,13 +2,22 @@
 
 namespace app\controllers;
 
+use app\models\MeasurementModel;
+use app\models\SensorModel;
 use Yii;
 use yii\web\Controller;
 use app\models\SensorDetailModel;
 
 class SensorController extends Controller
 {
-    public function actionDetail($id)
+    /**
+     * Provides details about sensor and last 20 measurements from sensor.
+     *
+     * @param int $id Id of sensor which will be displayed.
+     *
+     * @return string HTML page with info about sensor and last 20 measurements.
+     */
+    public function actionDetail($id): string
     {
         $id = $_GET['id'];
         $sensorDetailModel = new SensorDetailModel();
