@@ -5,4 +5,4 @@ start-db:
 stop-db:
 	docker stop iot-mysql
 run-website:
-	cd website && php yii serve --port=3000
+	php yii serve --port=3000

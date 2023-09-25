@@ -4,7 +4,6 @@
 
 - [About](#about)
 - [How to run](#how-to-run)
-- [env configuration](#env-configuration)
 - [Functions](#functions)
   - [Pages](#pages)
     - [Landing page](#landing-page)
@@ -23,17 +22,12 @@ PHP website with database for internet of things.
 # How to run
 
 1. Run docker
-2. Run `make build-db`
-3. Create database with name `iot-mysql`
-4. Run `php yii migrate`
-5. Run `make run-website`
-
-# env configuration
-
-- DB_HOST="127.0.0.1:13306"
-- DB_NAME="iot-mysql"
-- DB_USER="root"
-- DB_PASSWORD="password"
+2. Make [.env](/.env.example) file
+3. Run `docker compose up`
+4. Set MIGRATION in .env to `true`
+5. Run `php yii migrate`
+6. Set MIGRATION in .env to `false`
+7. Access website on port 8000
 
 # Functions
 

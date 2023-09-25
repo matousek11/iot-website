@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=' . env("DB_HOST") . ';dbname=' . env("DB_NAME"),
+    'dsn' => env("MIGRATION") == "true" ? 'mysql:host=' . env("DB_HOST_FOR_MIGRATION") . ';dbname=' . env("DB_NAME") : 'mysql:host=' . env("DB_HOST") . ';port=3306;dbname=' . env("DB_NAME"),
     'username' => env("DB_USER"),
     'password' => env("DB_PASSWORD"),
     'charset' => 'utf8',
